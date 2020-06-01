@@ -1,0 +1,31 @@
+CREATE TABLE imdbMovies (
+    -> imdb_title_id VARCHAR(255) NOT NULL,
+    -> title VARCHAR(255),
+    -> original_title VARCHAR(255),
+    -> year INT,
+    -> date_published DATE,
+    -> genre VARCHAR(255),
+    -> duration INT,
+    -> country VARCHAR(100),
+    -> language VARCHAR(100),
+    -> director VARCHAR(100),
+    -> writer TEXT,
+    -> production_company TEXT,
+    -> actors TEXT,
+    -> description TEXT,
+    -> avg_vote FLOAT,
+    -> votes INT,
+    -> budget VARCHAR(255),
+    -> usa_gross_income VARCHAR(255),
+    -> worldwide_gross_income VARCHAR(255),
+    -> metascore INT,
+    -> reviews_from_users INT,
+    -> reviews_from_critics INT,
+    -> PRIMARY KEY (imdb_title_id));
+
+LOAD DATA INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/IMDb movies.csv"
+    -> INTO TABLE imdbMovies
+    -> FIELDS TERMINATED BY ','
+    -> ENCLOSED BY '"'
+    -> LINES TERMINATED BY '\n'
+    -> IGNORE 1 ROWS;
