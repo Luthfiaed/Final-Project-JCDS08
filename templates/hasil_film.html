@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Rekomendasi Film</title>
+
+    <style>
+
+    body {
+        background-color: #1f2429;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 50px;
+    }
+    p {
+        text-align:center;
+        color: #1f2429;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 50px;
+        margin-top: 10px;
+        padding-left: 2cm;
+        padding-top: 1cm;
+        padding-right: 2cm;
+        padding-bottom: 0.5cm;
+    }
+    .img-container {
+        margin-top: 40px;
+        display: block;
+        text-align: center;
+    }
+    </style>
+
+</head>
+<body>
+<div class="img-container">
+    <img src="./../static/home logo.png" height="150px" width="350px">
+</div>
+
+<div class="wrapper">
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar0) }}>
+        <br><br>
+        <p>{{ df.loc[result[0]].title.capitalize() }} ({{ df.loc[result[0]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[0]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[0]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[0]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[0]].description }}</p>
+    </div>
+
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar1) }}>
+        <br><br>
+        <p>{{ df.loc[result[1]].title.capitalize() }} ({{ df.loc[result[1]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[1]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[1]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[1]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[1]].description }}</p>
+    </div>
+
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar2) }}>
+        <br><br>
+        <p>{{ df.loc[result[2]].title.capitalize() }} ({{ df.loc[result[2]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[2]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[2]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[2]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[2]].description }}</p>
+    </div>
+
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar3) }}>
+        <br><br>
+        <p>{{ df.loc[result[3]].title.capitalize() }} ({{ df.loc[result[3]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[3]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[3]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[3]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[3]].description }}</p>
+    </div>
+
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar4) }}>
+        <br><br>
+        <p>{{ df.loc[result[4]].title.capitalize() }} ({{ df.loc[result[4]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[4]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[4]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[4]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[4]].description }}</p>
+    </div>
+
+    <div class="btn btn-success" style="width: 300px; background-color: #e2dddd; border-width: 0px;">
+        <img src= {{ "http://image.tmdb.org/t/p/w200/{}".format(gambar4) }}>
+        <br><br>
+        <p>{{ df.loc[result[5]].title.capitalize() }} ({{ df.loc[result[5]].year }})
+        <br><b>Genre:</b> {{ df.loc[result[5]].genre }}
+        <br><b>Director:</b> {{ df.loc[result[5]].director }}
+        <br><b>User Score:</b> {{ df.loc[result[5]].avg_vote }}</p>
+        <p><b>Description:</b> {{ df.loc[result[5]].description }}</p>
+    </div>
+</div>
+
+<center><form action="http://localhost:5000/">
+        <button class="btn btn-success" type="submit" style="margin-bottom:20px; background-color: crimson; border-color: crimson;">Kembali</button>
+    </form></center>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
