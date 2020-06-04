@@ -17,7 +17,7 @@ def film() :
         inputYear = str(request.form['filmYear'])
         inputRating = str(request.form['filmRating'])
 
-        if film in dfImdb_clean.title :
+        if dfImdb_clean.title.str.contains(film.lower()).any() :
             def recommend(film, inputYear, inputRating) :                     
                 filmIndex = dfImdb_clean.index.get_loc(dfImdb_clean[dfImdb_clean.title == film].index[0])
                 similarMovies = list(enumerate(cos_similarity[filmIndex]))
