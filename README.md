@@ -7,7 +7,7 @@
 For this project, I use the IMDb movie dataset from kaggle, accessible <a href="https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset?select=IMDb+movies.csv">here</a>.
 
 <b>Model:</b>
-I use natural language processing (NLP) technique, specifically the <b>spacy</b> python module.
+I use natural language processing (NLP) technique, specifically the <b>Tf-Idf Vectorizer</b>.
 
 <b>Steps Taken in the Project</b>:
 <ol>
